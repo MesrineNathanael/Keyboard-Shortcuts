@@ -1,0 +1,8 @@
+D:\Forksources\KeyboardInjection\samplekeyboard\bin\Debug\samplekeyboard.exe.config
+D:\Forksources\KeyboardInjection\samplekeyboard\bin\Debug\samplekeyboard.exe
+D:\Forksources\KeyboardInjection\samplekeyboard\bin\Debug\samplekeyboard.pdb
+D:\Forksources\KeyboardInjection\samplekeyboard\obj\Debug\samplekeyboard.csproj.AssemblyReference.cache
+D:\Forksources\KeyboardInjection\samplekeyboard\obj\Debug\samplekeyboard.csproj.SuggestedBindingRedirects.cache
+D:\Forksources\KeyboardInjection\samplekeyboard\obj\Debug\samplekeyboard.csproj.CoreCompileInputs.cache
+D:\Forksources\KeyboardInjection\samplekeyboard\obj\Debug\samplekeyboard.exe
+D:\Forksources\KeyboardInjection\samplekeyboard\obj\Debug\samplekeyboard.pdb

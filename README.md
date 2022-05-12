@@ -1,2 +1,5 @@
-# Keyboard-Shortcuts
-Generic multithreaded keyboard shortcuter with Keyboard injection and Keyboard Listener
+# KeyboardInjection
+⌨️ A demonstration of keyboard injection written in C# ⌨️
+
+# Donate using Bitcoin!
+Donations: bitcoin:12FP1JisjYCsgfteTLMQQMLnVBs65wZD8G
