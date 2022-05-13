@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,6 +12,12 @@ namespace KeyboardShortcuts.Commons
 {
     public abstract class KeyListener
     {
+        [DllImport("user32.dll")]
+        protected static extern short GetAsyncKeyState(int vKey);
+        
+        [DllImport("user32.dll")]
+        public static extern byte VkKeyScan(char ch);
+        
         protected Thread ListenerThread;
 
         protected KeyInjection KeyInjector;
@@ -55,7 +63,7 @@ namespace KeyboardShortcuts.Commons
             WaitForUpKey = true;
             LastKeyPressed = key;
             Log.WriteDebug($"Attempt writing [{text.Replace("\r", "\\r")}]");
-            KeyInjector.TypeKeysAsync(text);
+            KeyInjector.TypeKeysAsync(text, 10);
         }
 
         protected void WaitingForUpKey()

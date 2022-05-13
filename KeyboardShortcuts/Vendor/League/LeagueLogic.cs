@@ -19,7 +19,7 @@ namespace KeyboardShortcuts.Vendor
                 Var2 = "\r",
                 Keys = new List<Key>
                 {
-                    Key.P,
+                    Key.I,
                     Key.D7
                 }
             },
@@ -30,7 +30,7 @@ namespace KeyboardShortcuts.Vendor
                 Var2 = "\r",
                 Keys = new List<Key>
                 {
-                    Key.P,
+                    Key.I,
                     Key.D8
                 }
             },
@@ -41,7 +41,7 @@ namespace KeyboardShortcuts.Vendor
                 Var2 = "\r",
                 Keys = new List<Key>
                 {
-                    Key.P,
+                    Key.I,
                     Key.D9
                 }
             },
@@ -52,7 +52,7 @@ namespace KeyboardShortcuts.Vendor
                 Var2 = "\r",
                 Keys = new List<Key>
                 {
-                    Key.P,
+                    Key.I,
                     Key.D0
                 }
             },
@@ -62,8 +62,8 @@ namespace KeyboardShortcuts.Vendor
                 Var2 = "\r",
                 Keys = new List<Key>
                 {
-                    Key.O,
-                    Key.P
+                    Key.I,
+                    Key.U
                 }
             }
 
@@ -84,6 +84,11 @@ namespace KeyboardShortcuts.Vendor
 
                 WaitingForUpKey();
                 WaitingNewGame();
+                
+                int orbwalkKey = VkKeyScan('h');
+                short keyStateTemp = GetAsyncKeyState(orbwalkKey);
+                bool keyIsPressed = ((keyStateTemp >> 15) & 0x0001) == 0x0001;
+                if (keyIsPressed) Log.WriteDebug("H is pressed");
 
                 foreach (var shortcut in Shortcuts)
                 {

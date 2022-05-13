@@ -14,3 +14,11 @@ D:\Forksources\KeyboardInjection\KeyboardShortcuts\obj\Debug\KeyboardShortcuts.c
 D:\Forksources\KeyboardInjection\KeyboardShortcuts\obj\Debug\KeyboardShortcuts.csproj.CoreCompileInputs.cache
 D:\Forksources\KeyboardInjection\KeyboardShortcuts\obj\Debug\KeyboardShortcuts.exe
 D:\Forksources\KeyboardInjection\KeyboardShortcuts\obj\Debug\KeyboardShortcuts.pdb
+D:\Forksources\Keyboard-Shortcuts\KeyboardShortcuts\bin\Debug\KeyboardShortcuts.exe.config
+D:\Forksources\Keyboard-Shortcuts\KeyboardShortcuts\bin\Debug\KeyboardShortcuts.exe
+D:\Forksources\Keyboard-Shortcuts\KeyboardShortcuts\obj\Debug\KeyboardShortcuts.csproj.AssemblyReference.cache
+D:\Forksources\Keyboard-Shortcuts\KeyboardShortcuts\obj\Debug\KeyboardShortcuts.csproj.SuggestedBindingRedirects.cache
+D:\Forksources\Keyboard-Shortcuts\KeyboardShortcuts\obj\Debug\KeyboardShortcuts.csproj.CoreCompileInputs.cache
+D:\Forksources\Keyboard-Shortcuts\KeyboardShortcuts\obj\Debug\KeyboardShortcuts.exe
+D:\Forksources\Keyboard-Shortcuts\KeyboardShortcuts\obj\Debug\KeyboardShortcuts.pdb
+D:\Forksources\Keyboard-Shortcuts\KeyboardShortcuts\bin\Debug\KeyboardShortcuts.pdb

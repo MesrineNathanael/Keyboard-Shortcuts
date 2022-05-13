@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using System.Windows.Input;
 
 namespace KeyboardShortcuts.Vendor.Common
@@ -21,7 +22,12 @@ namespace KeyboardShortcuts.Vendor.Common
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Text1} {Var1} {Text2} {Var2}";
+            StringBuilder stringBuilder = new StringBuilder();
+            if (Text1 != "") stringBuilder.Append(Text1);
+            if (Var1 != "") stringBuilder.Append(" " + Var1);
+            if (Text2 != "") stringBuilder.Append(" " + Text2);
+            if (Var2 != "") stringBuilder.Append(" " + Var2);
+            return stringBuilder.ToString();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace KeyboardShortcuts
 {
     public class Program
     {
-        
+        [STAThread]
         public static void Main(string[] args)
         {
             var main = new Main();

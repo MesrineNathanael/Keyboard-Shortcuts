@@ -1,6 +1,7 @@
 ﻿using KeyboardShortcuts.Commons.Enums;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -15,7 +16,7 @@ namespace KeyboardShortcuts.Commons
         private static extern bool InjectKeyboardInput(ref TagKeyInput input, uint count);
 
         //Async key injector
-        public void TypeKeysAsync(string text, int delay = 1) 
+        public void TypeKeysAsync(string text, int delay = 10) 
         {
             Task.Run(() =>
             {
@@ -27,7 +28,7 @@ namespace KeyboardShortcuts.Commons
             });
         }
         
-        public void TypeKeyAsync(KeyCode code, int delay = 1)
+        public void TypeKeyAsync(KeyCode code, int delay = 10)
         {
             if (code == 0)
             {
@@ -38,15 +39,15 @@ namespace KeyboardShortcuts.Commons
             Task.Run(() =>
             {
                 TypeKey(false, code);
-                Thread.Sleep(delay);
+                Sleep(delay);
                 TypeKey(true, code);
             });
         }
 
-        private void TypeKey(KeyCode code, int delay = 1)
+        private void TypeKey(KeyCode code, int delay = 10)
         {
             TypeKey(false, code);
-            Thread.Sleep(delay);
+            Sleep(delay);
             TypeKey(true, code);
         }
 
@@ -61,6 +62,17 @@ namespace KeyboardShortcuts.Commons
                 input.dwFlags = KeyEventFlags.KEYEVENTF_KEYUP;
             }
             InjectKeyboardInput(ref input, 1);
+        }
+        
+        private void Sleep(int microseconds)
+        {
+            var frequency = microseconds + Stopwatch.Frequency / 1000;
+            var stopWatch = Stopwatch.StartNew();
+            while (stopWatch.ElapsedTicks < frequency)
+            {
+
+            }
+            stopWatch.Stop();
         }
     }
 }
