@@ -16,6 +16,8 @@ namespace KeyboardShortcuts.Vendor.Common
         
         public string Var2 = "";
 
+        public bool LastKeyNeedToBeUp = true;
+
         /// <summary>
         /// Return a the result in format "{Text1} {Var1} {Text2} {Var2}"
         /// </summary>

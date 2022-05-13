@@ -65,6 +65,16 @@ namespace KeyboardShortcuts.Vendor
                     Key.I,
                     Key.U
                 }
+            },
+            new Shortcut
+            {
+                Text1 = "\r/MUTE ALL",
+                Var2 = "\r",
+                Keys = new List<Key>
+                {
+                    Key.J,
+                    Key.K
+                }
             }
 
         };
@@ -78,17 +88,13 @@ namespace KeyboardShortcuts.Vendor
 
         protected override void Listen()
         {
+            Log.WriteInfo("League logic start listening");
             while (true)
             {
                 Thread.Sleep(10);
 
                 WaitingForUpKey();
                 WaitingNewGame();
-                
-                int orbwalkKey = VkKeyScan('h');
-                short keyStateTemp = GetAsyncKeyState(orbwalkKey);
-                bool keyIsPressed = ((keyStateTemp >> 15) & 0x0001) == 0x0001;
-                if (keyIsPressed) Log.WriteDebug("H is pressed");
 
                 foreach (var shortcut in Shortcuts)
                 {
@@ -100,12 +106,18 @@ namespace KeyboardShortcuts.Vendor
                             allKeyPressed = false;
                             break;
                         }
+                        if (shortcut.LastKeyNeedToBeUp)
+                        {
+                            LastKeyPressed = key;
+                        }
+
                         allKeyPressed = true;
                     }
 
-                    if (allKeyPressed)
+                    if (allKeyPressed && !WaitForUpKey)
                     {
                         SetAndTypeKeys(shortcut.Keys.Last(), ParseSugarText(shortcut.ToString()));
+                        WaitForUpKey = true;
                     }
                 }
             }

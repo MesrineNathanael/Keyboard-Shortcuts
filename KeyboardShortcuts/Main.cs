@@ -3,6 +3,8 @@ using KeyboardShortcuts.Commons;
 using KeyboardShortcuts.Vendor;
 using System;
 using System.Threading;
+using KeyboardShortcuts.Commons.Enums;
+using KeyboardShortcuts.Vendor.League.Orbwalker;
 
 namespace KeyboardShortcuts
 {
@@ -27,10 +29,16 @@ namespace KeyboardShortcuts
             LeagueLogic leagueLogic = new LeagueLogic(KeyInjector);
             
             leagueLogic.Start();
+
+            OrbWalkerLogic orbWalkerLogic = new OrbWalkerLogic(KeyInjector);
+
+            orbWalkerLogic.Start();
             //
 
             Log.CarriageReturn();
             Log.WriteInfo("Press escape to exit");
+            Log.CarriageReturn();
+            
             while (_isRunning)
             {
                 Thread.Sleep(50);

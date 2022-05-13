@@ -22,7 +22,7 @@ namespace KeyboardShortcuts.Commons
 
         protected KeyInjection KeyInjector;
 
-        protected Key LastKeyPressed;
+        protected Key LastKeyPressed = Key.None;
 
         protected bool WaitForUpKey = false;
 
@@ -41,7 +41,7 @@ namespace KeyboardShortcuts.Commons
 
             if (ListenerThread.IsAlive)
             {
-                Log.WriteInfo("Key Listener started");
+                Log.WriteInfo($"Key Listener started in thread {ListenerThread.ManagedThreadId}");
             }
         }
 
@@ -55,6 +55,41 @@ namespace KeyboardShortcuts.Commons
                 Thread.Sleep(10);
 
                 WaitingForUpKey();
+
+                //Exemple below
+                /*
+                while (true)
+                {
+                    Thread.Sleep(10);
+
+                    WaitingForUpKey();
+
+                    foreach (var shortcut in Shortcuts)
+                    {
+                        bool allKeyPressed = false;
+                        foreach(var key in shortcut.Keys)
+                        {
+                            if (!Keyboard.IsKeyDown(key))
+                            {
+                                allKeyPressed = false;
+                                break;
+                            }
+                            if (shortcut.LastKeyNeedToBeUp)
+                            {
+                                LastKeyPressed = key;
+                            }
+
+                            allKeyPressed = true;
+                        }
+
+                        if (allKeyPressed && !WaitForUpKey)
+                        {
+                            SetAndTypeKeys(shortcut.Keys.Last(), ParseSugarText(shortcut.ToString()));
+                            WaitForUpKey = true;
+                        }
+                    }
+                }
+                */
             }
         }
 
@@ -68,14 +103,30 @@ namespace KeyboardShortcuts.Commons
 
         protected void WaitingForUpKey()
         {
+            if (LastKeyPressed == Key.None) return;
             if (WaitForUpKey)
             {
-                Thread.Sleep(100);
                 if (Keyboard.IsKeyUp(LastKeyPressed))
                 {
                     WaitForUpKey = false;
                 }
             }
+        }
+
+        /// <summary>
+        /// Sleep more precisely than Thread.Sleep
+        /// 100000 ticks = 10 ms
+        /// </summary>
+        /// <param name="ticks">100000 = 10 ms</param>
+        protected void Sleep(int ticks)
+        {
+            var frequency = ticks + Stopwatch.Frequency / 1000;
+            var stopWatch = Stopwatch.StartNew();
+            while (stopWatch.ElapsedTicks < frequency)
+            {
+
+            }
+            stopWatch.Stop();
         }
     }
 }
