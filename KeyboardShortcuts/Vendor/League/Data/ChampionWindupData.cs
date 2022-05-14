@@ -9,9 +9,12 @@ namespace KeyboardShortcuts.Vendor.League.Data
 {
     public class ChampionWindupData
     {
-        Dictionary<string, int> Windups = new Dictionary<string, int>
+        private static Dictionary<string, int> Windups = new Dictionary<string, int>
         {
-            {"Vayne", 260 }
+            {"Vayne", 260 },
+            {"Kindred", 260 },
+            {"Kayle", 240 },
+            {"Gangplank", 240 }
         };
 
         public static int GetChampionWindup(string name)

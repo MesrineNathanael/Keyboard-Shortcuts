@@ -81,7 +81,7 @@ namespace KeyboardShortcuts.Vendor
 
         private DateTime _startTime;
 
-        public LeagueLogic(KeyInjection keyInjection) : base(keyInjection)
+        public LeagueLogic(KeyInjection keyInjection, MouseInputs mouseInputs) : base(keyInjection, mouseInputs)
         {
             
         }

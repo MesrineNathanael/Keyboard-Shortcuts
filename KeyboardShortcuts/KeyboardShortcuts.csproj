@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,11 +32,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,15 +54,19 @@
     <Compile Include="Commons\KeyInjection.cs" />
     <Compile Include="Commons\KeyListener.cs" />
     <Compile Include="Commons\Log.cs" />
+    <Compile Include="Commons\MouseInputs.cs" />
     <Compile Include="Commons\TagKeyInput.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vendor\Common\AsciiTitle.cs" />
+    <Compile Include="Vendor\League\PixelBot\PixelSearchArray.cs" />
     <Compile Include="Vendor\Common\Shortcut.cs" />
     <Compile Include="Vendor\League\API\ApiScraper.cs" />
+    <Compile Include="Vendor\League\Data\ChampionWindupData.cs" />
     <Compile Include="Vendor\League\LeagueLogic.cs" />
     <Compile Include="Vendor\League\Orbwalker\OrbWalkerLogic.cs" />
+    <Compile Include="Vendor\League\PixelBot\PixelSearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

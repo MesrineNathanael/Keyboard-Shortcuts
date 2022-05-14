@@ -12,6 +12,8 @@ namespace KeyboardShortcuts
     {
         public readonly KeyInjection KeyInjector = new KeyInjection();
 
+        public readonly MouseInputs MouseInputs = new MouseInputs();
+
         private bool _isRunning = true;
 
         public void Start()
@@ -30,7 +32,7 @@ namespace KeyboardShortcuts
             
             //leagueLogic.Start();
 
-            OrbWalkerLogic orbWalkerLogic = new OrbWalkerLogic(KeyInjector);
+            OrbWalkerLogic orbWalkerLogic = new OrbWalkerLogic(KeyInjector, MouseInputs);
 
             orbWalkerLogic.Start();
             //

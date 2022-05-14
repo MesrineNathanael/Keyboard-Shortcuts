@@ -22,14 +22,17 @@ namespace KeyboardShortcuts.Commons
 
         protected KeyInjection KeyInjector;
 
+        protected MouseInputs MouseInputs;
+
         protected Key LastKeyPressed = Key.None;
 
         protected bool WaitForUpKey = false;
 
-        public KeyListener(KeyInjection keyInjection)
+        public KeyListener(KeyInjection keyInjection, MouseInputs mouseInputs)
         {
             ListenerThread = new Thread(Listen);
             KeyInjector = keyInjection;
+            MouseInputs = mouseInputs;
         }
 
         public void Start()
