@@ -26,9 +26,9 @@ namespace KeyboardShortcuts
             Log.WriteInfo("Keyboard Shortcuts starting...");
 
             // call your Vendor part here
-            LeagueLogic leagueLogic = new LeagueLogic(KeyInjector);
+            //LeagueLogic leagueLogic = new LeagueLogic(KeyInjector);
             
-            leagueLogic.Start();
+            //leagueLogic.Start();
 
             OrbWalkerLogic orbWalkerLogic = new OrbWalkerLogic(KeyInjector);
 

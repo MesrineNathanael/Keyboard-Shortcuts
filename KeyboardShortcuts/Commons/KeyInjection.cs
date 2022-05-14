@@ -15,6 +15,7 @@ namespace KeyboardShortcuts.Commons
         [DllImport("user32.dll")]
         private static extern bool InjectKeyboardInput(ref TagKeyInput input, uint count);
 
+
         //Async key injector
         public void TypeKeysAsync(string text, int delay = 10) 
         {
@@ -40,6 +41,30 @@ namespace KeyboardShortcuts.Commons
             {
                 TypeKey(false, code);
                 Sleep(delay);
+                TypeKey(true, code);
+            });
+        }
+
+        public void PressKeyAsync(KeyCode code)
+        {
+            Task.Run(() =>
+            {
+                TypeKey(false, code);
+            });
+        }
+
+        public void PressKeyAsync(KeyCode code, bool isUp)
+        {
+            Task.Run(() =>
+            {
+                TypeKey(isUp, code);
+            });
+        }
+
+        public void UpKeyAsync(KeyCode code)
+        {
+            Task.Run(() =>
+            {
                 TypeKey(true, code);
             });
         }

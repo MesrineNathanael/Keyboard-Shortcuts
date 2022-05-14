@@ -116,7 +116,7 @@ namespace KeyboardShortcuts.Vendor
 
                     if (allKeyPressed && !WaitForUpKey)
                     {
-                        SetAndTypeKeys(shortcut.Keys.Last(), ParseSugarText(shortcut.ToString()));
+                        SetAndTypeKeys(shortcut.Keys.Last(), ParseSugarText(shortcut.ToString()), 500000);
                         WaitForUpKey = true;
                     }
                 }

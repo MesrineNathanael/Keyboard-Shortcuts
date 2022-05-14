@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vendor\Common\AsciiTitle.cs" />
     <Compile Include="Vendor\Common\Shortcut.cs" />
+    <Compile Include="Vendor\League\API\ApiScraper.cs" />
     <Compile Include="Vendor\League\LeagueLogic.cs" />
     <Compile Include="Vendor\League\Orbwalker\OrbWalkerLogic.cs" />
   </ItemGroup>

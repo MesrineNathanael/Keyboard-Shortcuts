@@ -34,7 +34,7 @@ namespace KeyboardShortcuts.Commons
 
         public void Start()
         {
-            Log.WriteInfo("Key Listener starting...");
+            Log.WriteInfo("A new key Listener starting...");
             
             ListenerThread.SetApartmentState(ApartmentState.STA);
             ListenerThread.Start();
@@ -93,12 +93,18 @@ namespace KeyboardShortcuts.Commons
             }
         }
 
-        protected void SetAndTypeKeys(Key key, string text)
+        protected void SetAndTypeKeys(Key key, string text, int delay = 10)
         {
             WaitForUpKey = true;
             LastKeyPressed = key;
             Log.WriteDebug($"Attempt writing [{text.Replace("\r", "\\r")}]");
             KeyInjector.TypeKeysAsync(text, 10);
+        }
+
+        protected void TypeKey(string text, int delay = 10)
+        {
+            Log.WriteDebug($"Attempt writing [{text.Replace("\r", "\\r")}]");
+            KeyInjector.TypeKeysAsync(text, delay);
         }
 
         protected void WaitingForUpKey()
