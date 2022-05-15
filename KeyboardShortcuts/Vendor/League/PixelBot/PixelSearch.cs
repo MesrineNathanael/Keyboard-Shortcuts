@@ -41,8 +41,6 @@ namespace KeyboardShortcuts.Vendor.League.PixelBot
 			return bmp.GetPixel(0, 0);
 		}
 
-
-
 		private int monitor;
 		public unsafe Point[] SearchPixel(Rectangle rect, Color PixelColor, int ShadeVariation)
 		{
@@ -89,7 +87,6 @@ namespace KeyboardShortcuts.Vendor.League.PixelBot
 			if (monitor >= Screen.AllScreens.Length)
 			{
 				monitor = 0;
-				//UpdateUI();
 			}
 
 			int xOffset = Screen.AllScreens[monitor].Bounds.Left;

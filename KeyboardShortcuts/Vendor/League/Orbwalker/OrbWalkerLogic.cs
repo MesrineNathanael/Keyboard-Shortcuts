@@ -129,7 +129,7 @@ namespace KeyboardShortcuts.Vendor.League.Orbwalker
 
                         if (!championAttackOnlyIsToggled)
                         {
-                            KeyInjector.PressKeyAsync(KeyCodeCharWrapper.GetKey(_attackChampionOnlyKey), false);
+                            //KeyInjector.PressKeyAsync(KeyCodeCharWrapper.GetKey(_attackChampionOnlyKey), false);
                             championAttackOnlyIsToggled = true;
                         }
 
@@ -194,7 +194,7 @@ namespace KeyboardShortcuts.Vendor.League.Orbwalker
                     {
                         if (championAttackOnlyIsToggled)
                         {
-                            KeyInjector.PressKeyAsync(KeyCodeCharWrapper.GetKey(_attackChampionOnlyKey), true);
+                            //KeyInjector.PressKeyAsync(KeyCodeCharWrapper.GetKey(_attackChampionOnlyKey), true);
                             championAttackOnlyIsToggled = false;
                         }
                     }
@@ -258,7 +258,7 @@ namespace KeyboardShortcuts.Vendor.League.Orbwalker
                 {
                     if (_currentPlayerAttackSpeed == 0)
                     {
-                        Log.WriteWarning("Player current attack speed can't be detected.");
+                         Log.WriteWarning("Player current attack speed can't be detected.");
                         _currentPlayerAttackSpeed = 1;
                     }
                     var autoA = ApiScraper.PlayerAttackSpeed();
@@ -266,9 +266,9 @@ namespace KeyboardShortcuts.Vendor.League.Orbwalker
                     if(autoA != "")
                         _currentPlayerAttackSpeed = Convert.ToDouble(autoA);
                     
-                    Log.WriteDebug($"Current player auto attack speed is {_currentPlayerAttackSpeed}");
+                    //Log.WriteDebug($"Current player auto attack speed is {_currentPlayerAttackSpeed}");
                 }
-                Thread.Sleep(750);
+                Thread.Sleep(500);
             }
         }
 
